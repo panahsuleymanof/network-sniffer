@@ -7,12 +7,14 @@ It captures live packets and displays key information: **time, size, src/dst IP 
 
 ## ✨ Features
 
-- Capture packets from a chosen **interface** (`--iface`)
-- Apply a **BPF filter** (`--filter`) like in Wireshark/tcpdump
-- Limit capture to **N packets** or run unlimited (`--count`)
-- Toggle **payload previews** (`--no-payload`)
-- Save traffic to a **PCAP file** (`--pcap`)
-- Print simple **statistics** at the end (`--stats`)
+This sniffer supports the following options:
+
+- `-i, --iface` → capture from a specific interface (e.g., `en0`, `wlan0`, `eth0`)
+- `-f, --filter` → apply a BPF filter (e.g., `"tcp or udp"`, `"port 53"`)
+- `-c, --count` → number of packets to capture (`0` = unlimited)
+- `--no-payload` → hide payload previews
+- `--pcap FILE` → save captured packets into a PCAP file
+- `--stats` → print simple statistics (top source IPs & protocol counts) at the end
 
 ---
 
@@ -31,7 +33,7 @@ Note:
 	- On macOS/Linux you must run the script with sudo to capture packets.
 	- On Windows, install Npcap (WinPcap API compatible) and run the terminal as Administrator.
 
-### Usage
+### 3) Usage
 
 Minimal (20 packets):
 ```bash
